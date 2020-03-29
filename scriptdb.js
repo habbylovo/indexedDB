@@ -35,7 +35,7 @@ if(indexed && form){
         const fragment = document.createDocumentFragment()
         console.log('adsad')
         console.log(objectStore)
-        var prueba = {};
+        var prueba = [];
         request.onsuccess = (e) =>{
             const cursor = e.target.result
             if(cursor){
