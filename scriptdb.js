@@ -71,14 +71,52 @@ if(indexed && form){
         // console.log(data)
     })
 
+    const check_alive = () =>{
+        var a;
+        $.ajax({
+                url: 'http://rest.smycode.com/index.php?action=combos',
+                type: 'GET',
+                async: false,
+                beforeSend:function(){
+                },
+                success: function(data){
+                    //Ready for MySQL insertion.
+                    console.log("hay conexion");
+                    a=0;
+                },
+                error: function(data) {
+                    //Go in the indexDB
+                    console.log("No hay conexion");
+                    a=1;
+                }
+        });
+        return a;
+    }
+
+    const peticion = (time) =>{
+        controlador = setInterval(function(){
+            if(check_alive()==0) {
+                readData()
+            }
+            else {
+                alert('no se puede conectar al servidor')
+            }
+        }, time);
+    }
+
+
+    if(navigator.onLine) {
+        peticion(10000)
+    } else {
+        alert('no hay internet');
+    }
+
     addEventListener('online', (e) => {
-        alert('online')
-        readData()
+        peticion(2000)
     })
+
     addEventListener('offline', (e) => {
-        alert('offline')
-        // tabla.textContent = ''
+        clearTimeout(controlador);
         $("#tabla").html('');
-        // console.log('offline', 0)
     })
 }
