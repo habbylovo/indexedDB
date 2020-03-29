@@ -70,22 +70,18 @@ if(indexed && form){
         readData()
         // console.log(data)
     })
-
+    const prueba = async () => {
+        const { data: users } = await axios.get('http://rest.smycode.com/index.php?action=combos')
+        console.log(users)
+    }
+    
     const check_alive = () =>{
         var a;
         $.ajax({
                 url: 'http://rest.smycode.com/index.php?action=combos',
                 type: 'GET',
-                dataType: 'json',
-                headers: {
-                    Accept: 'application/vvv.website+json;version=1 '
-                    // Authorization: 'Token token=\"FuHCLyY46\"'
-                },
-                // contentType: "text/xml",
                 async: false,
-                beforeSend:function(xhr){
-                    xhr.setRequestHeader("Accept","application/vvv.website+json;version=1");
-                    // xhr.setRequestHeader("Authorization","Token token=\"FuHCLyY46\"");  
+                beforeSend:function(){
                 },
                 success: function(data){
                     //Ready for MySQL insertion.
@@ -93,29 +89,25 @@ if(indexed && form){
                     console.log("hay conexion");
                     a=0;
                 },
-                error: function(jqXHR, textStatus, errorThrown){
-                    console.log("Error for ajax call "+jqXHR.status+"-- "+textStatus+"--"+errorThrown); 
+                error: function(data) {
+                    //Go in the indexDB
+                    console.log(data);
+                    console.log("No hay conexion");
                     a=1;
-                    return jqXHR.status; 
                 }
-                //     //Go in the indexDB
-                //     console.log(data);
-                //     console.log(test);
-                //     console.log("No hay conexionnnnn");
-                //     a=1;
-                // }
         });
         return a;
     }
 
     const peticion = (time) =>{
         controlador = setInterval(function(){
-            if(check_alive()==0) {
-                readData()
-            }
-            else {
-                alert('no se puede conectar al servidor')
-            }
+            // if(check_alive()==0) {
+            //     readData()
+            // }
+            // else {
+            //     alert('no se puede conectar al servidor')
+            // }
+            prueba()
         }, time);
     }
 
@@ -135,3 +127,4 @@ if(indexed && form){
         $("#tabla").html('');
     })
 }
+
