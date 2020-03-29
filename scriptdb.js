@@ -34,6 +34,7 @@ if(indexed && form){
         const request = objectStore.openCursor()
         const fragment = document.createDocumentFragment()
         request.onsuccess = (e) =>{
+            console.log(e.target.result)
             const cursor = e.target.result
             if(cursor){
                 const tr = document.createElement('tr')

@@ -5,3 +5,26 @@ git branch gh-pages
 git checkout gh-pages
 git remote add origin https://github.com/habbylovo/indexedDB.git
 git push -u origin gh-pages
+
+
+git config --global user.name myusername
+git config --global user.email myemail
+git config --global github.user myusername
+git config --global github.token mytoken
+
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+
+git config --global --unset-all
+git config --global --unset credential.helper
+
+git rm miarchivo.php
+git rm -r micarpeta
+git commit -m "elimino archivos innecesarios"
+git push
+
+
+git config user.name
+
+git status
