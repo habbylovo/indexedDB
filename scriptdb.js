@@ -72,4 +72,11 @@ if(indexed && form){
         readData()
         console.log(data)
     })
+
+    addEventListener('online', (e) => {
+        console.log(1)
+    })
+    addEventListener('offline', (e) => {
+        console.log(0)
+    })
 }
