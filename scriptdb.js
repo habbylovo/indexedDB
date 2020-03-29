@@ -76,9 +76,7 @@ if(indexed && form){
         $.ajax({
                 url: 'http://rest.smycode.com/index.php?action=combos',
                 type: 'GET',
-                xhrFields: {
-                    withCredentials: true
-                },
+                contentType: "text/xml",
                 async: false,
                 beforeSend:function(){
                 },
