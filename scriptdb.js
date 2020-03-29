@@ -12,7 +12,7 @@ if(indexed && form){
     request.onsuccess = () =>{
         db = request.result
         console.log('OPEN', db)
-        readData()
+        // readData()
     }
     request.onupgradeneeded = () =>{
         db = request.result
@@ -72,7 +72,7 @@ if(indexed && form){
     })
 
     addEventListener('online', (e) => {
-        console.log('online', 1)
+        readData()
     })
     addEventListener('offline', (e) => {
         console.log('offline', 0)
