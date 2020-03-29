@@ -75,6 +75,8 @@ if(indexed && form){
         readData()
     })
     addEventListener('offline', (e) => {
+        tabla.textContent = ''
+        $("#tabla").html('');
         console.log('offline', 0)
     })
 }
