@@ -83,7 +83,7 @@ if(indexed && form){
                 },
                 // contentType: "text/xml",
                 async: false,
-                beforeSend:function(xr){
+                beforeSend:function(xhr){
                     xhr.setRequestHeader("Accept","application/vvv.website+json;version=1");
                     // xhr.setRequestHeader("Authorization","Token token=\"FuHCLyY46\"");  
                 },
