@@ -72,11 +72,13 @@ if(indexed && form){
     })
 
     addEventListener('online', (e) => {
+        alert('online')
         readData()
     })
     addEventListener('offline', (e) => {
-        tabla.textContent = ''
+        alert('offline')
+        // tabla.textContent = ''
         $("#tabla").html('');
-        console.log('offline', 0)
+        // console.log('offline', 0)
     })
 }
