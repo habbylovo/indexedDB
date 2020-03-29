@@ -30,6 +30,7 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
     e.waitUntil(
         caches.keys().then(keys => {
+            console.log('no hay conexion3')
             return Promise.all(
                 keys.filter(key => key !== CACHE_NAME)
                 .map(key => caches.delete(key)) //Eliminamos lo que ya no se necesita en cache
@@ -47,9 +48,9 @@ self.addEventListener('fetch', e => {
     e.respondWith(
         caches.match(e.request).then(cacheRes => {
             //recuperando cache
-            console.log('no hay conexion');
+            console.log('no hay conexion')
             return cacheRes || fetch(e.request).then(fetchRes => {
-                
+                console.log('no hay conexion2')
                 return caches.open(cacheDinamico).then(cache => {
                     cache.put(e.request.url, fetchRes.clone())
                     return fetchRes;
