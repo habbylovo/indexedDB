@@ -70,15 +70,12 @@ if(indexed && form){
         readData()
         // console.log(data)
     })
-    const prueba = async () => {
-        const { data: users } = await axios.get('http://rest.smycode.com/index.php?action=combos')
-        console.log(users)
-    }
-    
+
     const check_alive = () =>{
         var a;
         $.ajax({
-                url: 'http://rest.smycode.com/index.php?action=combos',
+                // url: 'http://rest.smycode.com/index.php?action=combos',
+                url: 'https://searchconsole.googleapis.com/$discovery/rest?version=v1',
                 type: 'GET',
                 async: false,
                 beforeSend:function(){
@@ -101,13 +98,12 @@ if(indexed && form){
 
     const peticion = (time) =>{
         controlador = setInterval(function(){
-            // if(check_alive()==0) {
-            //     readData()
-            // }
-            // else {
-            //     alert('no se puede conectar al servidor')
-            // }
-            prueba()
+            if(check_alive()==0) {
+                readData()
+            }
+            else {
+                alert('no se puede conectar al servidor')
+            }
         }, time);
     }
 
@@ -128,3 +124,8 @@ if(indexed && form){
     })
 }
 
+// const prueba = async () => {
+//     const { data: users } = await axios.get('http://rest.smycode.com/index.php?action=combos')
+//     console.log(users)
+// }
+// prueba()
