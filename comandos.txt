@@ -28,3 +28,6 @@ git push
 git config user.name
 
 git status
+
+https://desarrolloweb.com/articulos/modificar-ultimo-commit-git.html
+

@@ -33,6 +33,7 @@ if(indexed && form){
         const objectStore = transaction.objectStore('tabla')
         const request = objectStore.openCursor()
         const fragment = document.createDocumentFragment()
+        console.log('adsad')
         console.log(request)
         request.onsuccess = (e) =>{
             console.log(e.target.result)
