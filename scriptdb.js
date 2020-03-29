@@ -76,6 +76,7 @@ if(indexed && form){
         $.ajax({
                 url: 'http://rest.smycode.com/index.php?action=combos',
                 type: 'GET',
+                dataType: 'json',
                 // contentType: "text/xml",
                 // async: false,
                 beforeSend:function(){
@@ -86,9 +87,10 @@ if(indexed && form){
                     console.log("hay conexion");
                     a=0;
                 },
-                error: function(data) {
+                error: function(data, test) {
                     //Go in the indexDB
                     console.log(data);
+                    console.log(test);
                     console.log("No hay conexionnnnn");
                     a=1;
                 }
