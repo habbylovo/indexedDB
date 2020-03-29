@@ -36,7 +36,7 @@ if(indexed && form){
         console.log('adsad')
         console.log(request)
         request.onsuccess = (e) =>{
-            console.log(e.target.result)
+            console.reg(e.target)
             const cursor = e.target.result
             if(cursor){
                 const tr = document.createElement('tr')
