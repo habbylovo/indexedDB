@@ -34,9 +34,9 @@ if(indexed && form){
         const request = objectStore.openCursor()
         const fragment = document.createDocumentFragment()
         console.log('adsad')
-        console.log(request)
+        console.log(objectStore)
+        var prueba = {};
         request.onsuccess = (e) =>{
-            console.log(e.target)
             const cursor = e.target.result
             if(cursor){
                 const tr = document.createElement('tr')
@@ -47,12 +47,13 @@ if(indexed && form){
 
                 tr.insertCell().textContent = cursor.value.nombre
                 tr.insertCell().textContent = cursor.value.apellido
-
+                prueba.push(cursor.value);
                 fragment.appendChild(tr)
                 console.log(cursor.value)
                 cursor.continue()
             } else{
                 $("#tabla").html(fragment);
+                console.log(prueba);
                 // tabla.textContent = ''
                 // tabla.appendChild(fragment)
             }
