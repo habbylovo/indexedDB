@@ -3,3 +3,5 @@ git add .
 git commit -m "mensaje"
 git branch gh-pages
 git checkout gh-pages
+git remote add origin https://github.com/habbylovo/indexedDB.git
+git push -u origin gh-pages

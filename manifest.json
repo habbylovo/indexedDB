@@ -2,7 +2,7 @@
   "name": "#Test",
   "short_name": "#Test",
   "start_url": "./index.html",
-  "scope": "/",
+  "scope": "./",
   "description": "Test",
   "background_color": "#2B2B2B",
   "theme_color": "#F0DB4F",
