@@ -91,7 +91,7 @@ if(indexed && form){
                 error: function(data) {
                     //Go in the indexDB
                     console.log(data);
-                    console.log("No hay conexion");
+                    console.log("No hay conexionnnnn");
                     a=1;
                 }
         });
