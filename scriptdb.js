@@ -33,8 +33,6 @@ if(indexed && form){
         const objectStore = transaction.objectStore('tabla')
         const request = objectStore.openCursor()
         const fragment = document.createDocumentFragment()
-        console.log('adsad')
-        console.log(objectStore)
         var prueba = [];
         request.onsuccess = (e) =>{
             const cursor = e.target.result
@@ -49,7 +47,7 @@ if(indexed && form){
                 tr.insertCell().textContent = cursor.value.apellido
                 prueba.push(cursor.value);
                 fragment.appendChild(tr)
-                console.log(cursor.value)
+                // console.log(cursor.value)
                 cursor.continue()
             } else{
                 $("#tabla").html(fragment);
@@ -70,13 +68,13 @@ if(indexed && form){
         e.target.nombre.value = ''
         e.target.apellido.value = ''
         readData()
-        console.log(data)
+        // console.log(data)
     })
 
     addEventListener('online', (e) => {
-        console.log(1)
+        console.log('online', 1)
     })
     addEventListener('offline', (e) => {
-        console.log(0)
+        console.log('offline', 0)
     })
 }
