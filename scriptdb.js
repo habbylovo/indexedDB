@@ -77,9 +77,15 @@ if(indexed && form){
                 url: 'http://rest.smycode.com/index.php?action=combos',
                 type: 'GET',
                 dataType: 'json',
+                headers: {
+                    Accept: 'application/vvv.website+json;version=1 '
+                    // Authorization: 'Token token=\"FuHCLyY46\"'
+                },
                 // contentType: "text/xml",
-                // async: false,
-                beforeSend:function(){
+                async: false,
+                beforeSend:function(xr){
+                    xhr.setRequestHeader("Accept","application/vvv.website+json;version=1");
+                    // xhr.setRequestHeader("Authorization","Token token=\"FuHCLyY46\"");  
                 },
                 success: function(data){
                     //Ready for MySQL insertion.
