@@ -87,15 +87,24 @@ if(indexed && form){
                     console.log("hay conexion");
                     a=0;
                 },
-                error: function(data, test) {
-                    //Go in the indexDB
-                    console.log(data);
-                    console.log(test);
-                    console.log("No hay conexionnnnn");
+
+                error: function(jqXHR, textStatus, errorThrown){ 
+                    console.log("Error for ajax call "+jqXHR.status+"-- "+textStatus+"--"+errorThrown); 
                     a=1;
+                    return jqXHR.status; 
                 }
+                //     //Go in the indexDB
+                //     console.log(data);
+                //     console.log(test);
+                //     console.log("No hay conexionnnnn");
+                //     a=1;
+                // }
         });
         return a;
+    }
+    (jqXHR, textStatus, errorThrown){ 
+        console.log("Error for ajax call "+jqXHR.status+"-- "+textStatus+"--"+errorThrown); 
+        return jqXHR.status; 
     }
 
     const peticion = (time) =>{
