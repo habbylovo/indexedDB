@@ -1,0 +1,4 @@
+[01-Dec-2018 06:37:46 UTC] PHP Warning:  mysqli_connect(): Headers and client library minor version mismatch. Headers:50545 Library:100136 in /home/u860970483/domains/smycode.com/public_html/rest/db/conexion.php on line 8
+[01-Dec-2018 06:38:25 UTC] PHP Warning:  mysqli_connect(): Headers and client library minor version mismatch. Headers:50545 Library:100136 in /home/u860970483/domains/smycode.com/public_html/rest/db/conexion.php on line 8
+[01-Dec-2018 06:38:33 UTC] PHP Warning:  mysqli_connect(): Headers and client library minor version mismatch. Headers:50545 Library:100136 in /home/u860970483/domains/smycode.com/public_html/rest/db/conexion.php on line 8
+[01-Dec-2018 06:38:33 UTC] PHP Warning:  mysqli_connect(): Headers and client library minor version mismatch. Headers:50545 Library:100136 in /home/u860970483/domains/smycode.com/public_html/rest/db/conexion.php on line 8
