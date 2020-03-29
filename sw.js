@@ -48,6 +48,7 @@ self.addEventListener('fetch', e => {
         caches.match(e.request).then(cacheRes => {
             //recuperando cache
             return cacheRes || fetch(e.request).then(fetchRes => {
+                console.log('no hay conexion');
                 return caches.open(cacheDinamico).then(cache => {
                     cache.put(e.request.url, fetchRes.clone())
                     return fetchRes;
