@@ -81,11 +81,13 @@ if(indexed && form){
                 },
                 success: function(data){
                     //Ready for MySQL insertion.
+                    console.log(data);
                     console.log("hay conexion");
                     a=0;
                 },
                 error: function(data) {
                     //Go in the indexDB
+                    console.log(data);
                     console.log("No hay conexion");
                     a=1;
                 }
