@@ -76,8 +76,8 @@ if(indexed && form){
         $.ajax({
                 url: 'http://rest.smycode.com/index.php?action=combos',
                 type: 'GET',
-                contentType: "text/xml",
-                async: false,
+                // contentType: "text/xml",
+                // async: false,
                 beforeSend:function(){
                 },
                 success: function(data){
