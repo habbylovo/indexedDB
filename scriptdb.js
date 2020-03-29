@@ -93,8 +93,7 @@ if(indexed && form){
                     console.log("hay conexion");
                     a=0;
                 },
-
-                error: function(jqXHR, textStatus, errorThrown){ 
+                error: function(jqXHR, textStatus, errorThrown){
                     console.log("Error for ajax call "+jqXHR.status+"-- "+textStatus+"--"+errorThrown); 
                     a=1;
                     return jqXHR.status; 
@@ -107,10 +106,6 @@ if(indexed && form){
                 // }
         });
         return a;
-    }
-    (jqXHR, textStatus, errorThrown){ 
-        console.log("Error for ajax call "+jqXHR.status+"-- "+textStatus+"--"+errorThrown); 
-        return jqXHR.status; 
     }
 
     const peticion = (time) =>{
