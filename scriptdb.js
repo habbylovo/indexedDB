@@ -79,10 +79,10 @@ if(indexed && form){
                 url: 'http://localhost/API/public/api/personas',
                 type: 'GET',
                 async: false,
-                crossDomain:true,
-                xhrFields:{
-                    withCredentials:true
-                },
+                // crossDomain:true,
+                // xhrFields:{
+                //     withCredentials:true
+                // },
                 beforeSend:function(xhr){
                     xhr.setRequestHeader("X-Requested-With",'XMLHttpRequest');
                 },
