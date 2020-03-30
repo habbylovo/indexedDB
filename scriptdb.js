@@ -75,7 +75,8 @@ if(indexed && form){
         var a;
         $.ajax({
                 // url: 'http://rest.smycode.com/index.php?action=combos',
-                url: 'https://searchconsole.googleapis.com/$discovery/rest?version=v1',
+                // url: 'https://searchconsole.googleapis.com/$discovery/rest?version=v1',
+                url: 'http://indexeddb.smycode.com/API/public/hello/hola',
                 type: 'GET',
                 async: false,
                 beforeSend:function(){

@@ -1,0 +1,8 @@
+https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=928:metodos-open-send-getresponseheader-setrequestheader-de-xmlhttprequest-ajax-ejemplos-cu01209f&catid=83&Itemid=212
+
+https://searchconsole.googleapis.com/$discovery/rest?version=v1
+
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader
+https://stackoverflow.com/questions/7686827/how-can-i-add-a-custom-http-header-to-ajax-request-with-js-or-jquery
+XMLHttpRequest add header $ajax
+https://www.youtube.com/watch?v=3jJ_6DigaMU
