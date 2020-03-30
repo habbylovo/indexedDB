@@ -79,7 +79,12 @@ if(indexed && form){
                 url: 'http://localhost/API/public/api/personas',
                 type: 'GET',
                 async: false,
-                beforeSend:function(){
+                crossDomain:true,
+                xhrFields:{
+                    withCredentials:true
+                },
+                beforeSend:function(xhr){
+                    xhr.setRequestHeader("X-Requested-With",'XMLHttpRequest');
                 },
                 success: function(data){
                     //Ready for MySQL insertion.
