@@ -76,15 +76,15 @@ if(indexed && form){
         $.ajax({
                 // url: 'http://rest.smycode.com/index.php?action=combos',
                 // url: 'https://searchconsole.googleapis.com/$discovery/rest?version=v1',
-                url: 'http://localhost/API/public/api/personas',
+                url: 'http://indexeddb.smycode.com/API/public/api/personas',
                 type: 'GET',
                 async: false,
                 // crossDomain:true,
                 // xhrFields:{
                 //     withCredentials:true
                 // },
-                beforeSend:function(xhr){
-                    xhr.setRequestHeader("X-Requested-With",'XMLHttpRequest');
+                beforeSend:function(){
+                    // xhr.setRequestHeader("X-Requested-With",'XMLHttpRequest');
                 },
                 success: function(data){
                     //Ready for MySQL insertion.
