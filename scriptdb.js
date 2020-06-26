@@ -155,7 +155,7 @@ if(indexed && form){
         controlador = setInterval(function(){
             if(check_alive()==0) {
                 // guardar();
-                //readData()
+                readData()
             }
             else {
                 //alert('no se puede conectar al servidor')
