@@ -1,24 +1,41 @@
-<html>
-    <head>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <link rel="manifest" href="./manifest.json">
-        <link rel="shortcut icon" type="image/png" href="assets/template/dist/assets/img/logo_cash.png">
-        <!-- icono de app-->
-        <link rel="apple-touch-icon" href="assets/template/dist/assets/img/logo_cash.png">
-        <link rel="apple-touch-startup-image" href="assets/template/dist/assets/img/logo_cash.png">
-    </head>
-    <body>
-        <form action="" id="formulario">
-            <input type="text" id="nompre" name="nombre" placeholder="nombre">
-            <input type="text" id="apellido" name="apellido" placeholder="apellido">
-            <br>
-            <button>Enviar</button>
-        </form>
-        <div id="tabla">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Prueba GPS</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<body>
+	<div id="map"></div>
+	<div id="coordenadas"></div>
+	<script>
+		var output = document.getElementById('map');
+		if(navigator.geolocation){
+			$("#map").html("<p>Si soporta gps</p>");
+		} else{
+			$("#map").html("<p>No soporta gps</p>");
+		}
+		function localizacion(posicion){
+			var latitud = posicion.coords.latitude;
+			var longitud = posicion.coords.longitude;
+			var date = new Date();
+			var fecha = date.getFullYear()+'/'+(((date.getMonth()+1) < 10)?'0'+(date.getMonth()+1):(date.getMonth()+1))+'/'+date.getDate()+' '+date.getHours()+':'+date.getMinutes();
+			$("#coordenadas").append('Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br>');
+			if(latitud < 13.715101 && latitud > 13.714886) {
+				$("#coordenadas").append('Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br>');
+			}
+		}
+		function error(){
+			console.log('error');
+		}
 
-        </div>
-        <script src="./test.js"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-        <script src="./scriptdb.js"></script>
-    </body>
+		const peticion = (time) =>{
+		    controlador = setInterval(function(){
+		    	console.log('test');
+		    	navigator.geolocation.getCurrentPosition(localizacion, error);
+		    }, time);
+		}
+	    peticion(5000)
+	</script>
+</body>
 </html>
