@@ -20,9 +20,9 @@
 			var longitud = posicion.coords.longitude;
 			var date = new Date();
 			var fecha = date.getFullYear()+'/'+(((date.getMonth()+1) < 10)?'0'+(date.getMonth()+1):(date.getMonth()+1))+'/'+date.getDate()+' '+date.getHours()+':'+date.getMinutes();
-			$("#coordenadas").append('Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br>');
+			$("#coordenadas").append('Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br><br>');
 			if(latitud < 13.715101 && latitud > 13.714886) {
-				$("#coordenadas").append('Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br>');
+				$("#coordenadas").append('ACA,DIFERENTE Fecha: '+fecha+' latitud: '+latitud+', longitud: '+ longitud+', busqueda: '+latitud+','+ longitud+'<br><br>');
 			}
 		}
 		function error(){
